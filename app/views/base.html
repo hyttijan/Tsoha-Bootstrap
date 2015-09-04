@@ -33,15 +33,23 @@
             <span class="icon-bar"></span>
           </button>
           <!-- Sovelluksen nimi -->
-          <a class="navbar-brand" href="{{base_path}}">Tsoha Bootstrap</a>
+          <a class="navbar-brand" href="{{base_path}}">Keskustelufoorumi</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <!-- Navigaation linkit -->
             <li><a href="{{base_path}}">Etusivu</a></li>
+            <li><a href="{{base_path}}">Rekisteröi</a></li>
+            
           </ul>
+            
         </div>
+          <form class="form-group" id="login" method="post">
+                <input  class="text-primary" type="text" id="username" value="käyttäjänimi">
+                <input  class="text-primary" type="password" id="userpassword" value="salasana">
+                <input class="btn btn-primary" type="submit" value="kirjaudu">
+            </form>
       </div>
     </nav>
 
