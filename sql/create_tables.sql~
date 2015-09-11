@@ -18,6 +18,6 @@ CREATE TABLE viesti(
   keskustelu smallint REFERENCES keskustelu,
   kayttaja smallint REFERENCES kayttaja,
   sisalto varchar(1000) NOT NULL,
-  aika timestamptz NOT NULL
+  aika timestamptz
 );
 

@@ -6,9 +6,20 @@
       // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
    	  View::make('home.html');
     }
+    public static function foorumi(){
+       View::make('foorumi.html'); 
+    }
 
     public static function sandbox(){
       // Testaa koodiasi täällä
       echo 'Hello World!';
     }
+    public static function rekisterointi(){
+        View::make('rekisterointi.html');
+    }
+    public static function luokeskustelu(){
+        View::make('luokeskustelu.html');
+    }
+    
+    
   }

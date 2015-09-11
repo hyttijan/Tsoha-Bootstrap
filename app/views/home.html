@@ -2,10 +2,25 @@
 
 {% block content %}
   <div class="page-header">
-    <h1>Tämä on etusivu</h1>
+    <h1>Keskustelufoorumi</h1>
+    
   </div>
+<div class="jumbotron container-fluid">
+    <h2>Kirjaudu sisään</h2>
+            <form id="login" method="post">
+              <div class="form-group">
+                  <label for="username">Kayttajanimi</label>
+                <input  class="form-control" type="text" id="username">
+                </div>
+              <div class="form-group">
+              <label for="password">Salasana</label>
+                <input class="form-control" type="password" id="password" value="salasana">
+                </div>
+              <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="kirjaudu">
+              </div>
+            </form>
+    </div>
 
-  <p>
-    <a href="http://tsoha.github.io" class="btn btn-primary btn-lg">Toimii? <span class="glyphicon glyphicon-chevron-right"></span></a>
-  </p>
+ 
 {% endblock %}
