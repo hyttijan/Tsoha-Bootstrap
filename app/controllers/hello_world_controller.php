@@ -9,6 +9,12 @@
     public static function foorumi(){
        View::make('foorumi.html'); 
     }
+    public static function kategoria(){
+        View::make('kategoria.html');
+    }
+    public static function keskustelu(){
+        View::make('keskustelu.html');
+    }
 
     public static function sandbox(){
       // Testaa koodiasi täällä
