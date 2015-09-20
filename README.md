@@ -8,7 +8,7 @@ Yleisiä linkkejä:
 * [Linkki foorumiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/foorumi)
 * 
 Testausta varten on 
-käyttäjä: Testikayttaja
+käyttäjä: Testikayttaja ,
 salasana: salasana
 
 
