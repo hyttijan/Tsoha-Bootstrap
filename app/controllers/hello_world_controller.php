@@ -1,11 +1,11 @@
 <?php
-
+  
   class HelloWorldController extends BaseController{
 
     public static function index(){
-      // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
-   	  View::make('home.html');
-    }
+        $user = self::get_user_logged_in();
+   	  View::make('home.html',array('user'=>$user));
+    }     
     public static function foorumi(){
        View::make('foorumi.html'); 
     }
@@ -16,15 +16,30 @@
         View::make('keskustelu.html');
     }
 
-    public static function sandbox(){
-      // Testaa koodiasi täällä
-      echo 'Hello World!';
+    public static function sandbox($id){
+        $query=DB::connection()->prepare('SELECT kayttaja.kayttajanimi,viesti.viestiid,viesti.sisalto,viesti.aika FROM kayttaja,viesti WHERE viesti.kayttaja=kayttaja.kayttajaid AND viesti.keskustelu=:id');
+        $query->execute(array('id'=>$id));
+        $rows = $query->fetchAll();
+        $messages = array();
+        
+        foreach($rows as $row){
+            $messages[] = new Message(array('user'=>$row['kayttajanimi'],'id'=>$row['viestiid'],'content'=>$row['sisalto'],'time'=>$row['aika']));
+        }
+         Kint::dump($messages);
+       
+      
     }
     public static function rekisterointi(){
         View::make('rekisterointi.html');
     }
     public static function luokeskustelu(){
-        View::make('luokeskustelu.html');
+        self::check_logged_in();
+       
+        
+        $categories = Category::all();
+        View::make('luokeskustelu.html',array('categories'=>$categories));
+       
+        
     }
     
     

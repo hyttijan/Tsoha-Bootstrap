@@ -3,18 +3,19 @@
 {% block content %}
 <div>
   <div class="page-header">
-    <h1>Aiheet</h1>
+    <h1>Kategoriat</h1>
   </div>
     <div class="jumbotron container-fluid">
+        {% for category in categories %}
 <div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title"><a href="{{base_path}}/kategoria">Yleinen keskustelu</a></h3>
+    <div class="panel-heading"><h3 class="panel-title"><a href="{{base_path}}/kategoria-{{category.id}}">{{category.name}}</h3>
     </div>
    
 </div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title">Ohjelmointi</h3>
-    </div>
-</div>
+ {% endfor %}
+ {%if user_logged_in %}
+<a class="btn btn-success" href="{{base_path}}/luokeskustelu">luo keskustelu</a>
+{%endif%}
   </div>
 </div>
 
