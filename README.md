@@ -4,8 +4,9 @@ Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi)
 * [Linkki dokumentaatiooni](https://github.com/hyttijan/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
-* [Linkki rekisteröintiin:](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/rekisterointi)
-* [Linkki foorumiin:](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/foorumi)
+* [Linkki rekisteröintiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/rekisterointi)
+* [Linkki foorumiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/foorumi)
+* 
 Testausta varten on 
 käyttäjä: Testikayttaja
 salasana: salasana
