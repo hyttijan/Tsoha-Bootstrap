@@ -6,9 +6,11 @@ Yleisiä linkkejä:
 * [Linkki dokumentaatiooni](https://github.com/hyttijan/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 * [Linkki rekisteröintiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/rekisterointi)
 * [Linkki foorumiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/foorumi)
+* * [Linkki hallinnointiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/hallinto)
 * Testausta varten on 
 käyttäjä: Testikayttaja ,
 salasana: salasana
+*Lisätty hallinnointipaneeli, johon pääsee kirjauduttuaan testikäyttäjällä. Mahdollisuus poistaa peruskäyttäjiä.
 * Tällä hetkellä toimii rekisteröinti, kirjautuminen ja uloskirjautuminen, uusien keskustelujen aloittaminen ja viestien lisääminen(kirjautuneena)
 
 
