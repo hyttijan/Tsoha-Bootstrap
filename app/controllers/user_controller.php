@@ -21,6 +21,15 @@ class  UserController extends BaseController{
         }
         
     }
+    public static function removeUsers(){
+        
+   
+        $params = $_POST;
+        User::removeUsers($params);
+        $user = self::get_user_logged_in();
+        $users = User::all();
+         View::make('hallinto.html',array('users'=>$users,'user'=>$user));
+    }
     public static function logout(){
         $_SESSION['user'] =null;
         Redirect::to('/',array('message'=>'Olet kirjautunut ulos'));

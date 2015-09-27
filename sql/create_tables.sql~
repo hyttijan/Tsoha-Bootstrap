@@ -15,9 +15,9 @@ CREATE TABLE keskustelu(
 );
 CREATE TABLE viesti(
   viestiid SERIAL PRIMARY KEY,
-  keskustelu smallint REFERENCES keskustelu,
-  kayttaja smallint REFERENCES kayttaja,
+  keskustelu smallint REFERENCES keskustelu ON DELETE CASCADE,
+  kayttaja smallint REFERENCES kayttaja ON DELETE SET DEFAULT,
   sisalto varchar(1000) NOT NULL,
-  aika timestamptz
+  aika timestamptz NOT NULL
 );
 

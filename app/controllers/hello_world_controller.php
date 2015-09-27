@@ -5,7 +5,13 @@
     public static function index(){
         $user = self::get_user_logged_in();
    	  View::make('home.html',array('user'=>$user));
-    }     
+    }
+    public static function hallinto(){
+        $user = self::get_user_logged_in();
+        $users = User::all();
+        View::make('hallinto.html',array('users'=>$users,'user'=>$user));
+        
+    }
     public static function foorumi(){
        View::make('foorumi.html'); 
     }
@@ -31,6 +37,14 @@
     }
     public static function rekisterointi(){
         View::make('rekisterointi.html');
+    }
+    public static function etsi(){
+        self::check_logged_in();
+        $user = self::get_user_logged_in();
+        $params = $_POST;
+        
+        $users = User::username_like($params['searchword']);
+        View::make('hallinto.html',array('user'=>$user,'users'=>$users));
     }
     public static function luokeskustelu(){
         self::check_logged_in();

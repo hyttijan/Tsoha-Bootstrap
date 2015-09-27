@@ -16,6 +16,10 @@
     <div>
         <p>Terve {{user.name}}</p>
     </div>
+    {%if user.level>1%}
+    <div>
+        <a  class="btn btn-primary" href="{{base_path}}/hallinto">Hallinto</a>
+    {%endif%}
     {%else%}
     <h2>Kirjaudu sisään</h2>
             <form name="login" id="login" action="{{base_path}}/kirjaudu" method="post">

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>Hallinto</h1>
+    
+  </div>
+
+<div class="jumbotron container-fluid">
+ 
+ <div>
+    {%if user.level>1%}
+   
+       
+        <form name="search" method="post" action="{{base_path}}/hallinto">
+            <div class="form-group">
+                <lable for="searchword">Hakusana</label>
+                <input class="form-control" type="text" name="searchword">
+                </div>   
+                <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Etsi">
+                </div>
+                
+         
+        </form>
+        {%if users>0%}
+        
+        <form method="post" action="{{base_path}}/poistakayttajia">
+            <h3>Kayttajat</h3>
+        {% for u in users %}
+        <div>{{u.name}}
+        {%if u.level<2 %}
+        <input type="checkbox" name="users[]" value="{{u.id}}">
+        {%endif%}
+        </div>
+        {%endfor%}
+        <input type="submit" value="poista">
+        </form>
+        {%else%}
+        <p>Hakukriteerejäsi vastaavia käyttäjiä ei löytynyt</p>
+        {%endif%}
+        
+    {%else%}
+    <div class="warning">
+        <p>Käyttäjätasosi ei ole riittävä hallinnointiin</p>
+    </div>
+    {%endif%}
+    
+    
+   
+    </div>
+</div>
+
+ 
+{% endblock %}

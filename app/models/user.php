@@ -30,6 +30,51 @@ class User extends BaseModel{
         return false;
         
     }
+    public function all(){
+        $query = DB::connection()->prepare("SELECT * FROM kayttaja");
+        $query->execute();
+        $rows = $query->fetchAll();
+        $users = array();
+        if($rows){
+            foreach($rows as $row){
+                $users[] = new User(array('id'=>$row['kayttajaid'],'name'=>$row['kayttajanimi'],'password'=>$row['salasana'],'level'=>$row['kayttajataso']));
+                
+            }
+            return $users;
+         }
+         
+         return null;
+    }
+    public function removeUsers($params){
+        if(!empty($params)){
+        foreach($params['users'] as $user){
+           
+            $query= DB::connection()->prepare("UPDATE viesti SET kayttaja = 1 WHERE kayttaja=:id");    
+        $query->execute(array('id'=>$user));    
+            $query= DB::connection()->prepare("DELETE FROM kayttaja WHERE kayttajaid=:id");
+           
+        $query->execute(array('id'=>$user));
+       
+        }
+        }
+        
+    }
+    public function username_like($username){
+        $query = DB::connection()->prepare("SELECT * FROM kayttaja WHERE kayttajanimi LIKE ::text %:username%");
+         $query->execute(array('username'=>$username));
+         $rows = $query->fetchAll();
+         $users = array();
+         if($rows){
+            foreach($rows as $row){
+                $users[] = new User(array('id'=>$row['kayttajaid'],'name'=>$row['kayttajanimi'],'password'=>$row['salasana'],'level'=>$row['kayttajataso']));
+                
+            }
+            return $users;
+         }
+         
+         return null;
+        
+    }
     public function find($id){
     $query = DB::connection()->prepare("SELECT * FROM kayttaja WHERE kayttajaid=:id");    
     $query->execute(array('id'=>$id));
@@ -52,7 +97,7 @@ class User extends BaseModel{
         $username = $params['username'];
         $password = $params['password'];
         
-        $query = DB::connection()->prepare("SELECT * FROM kayttaja WHERE kayttajanimi=:username and salasana=:password");
+        $query = DB::connection()->prepare("SELECT * FROM kayttaja WHERE kayttajanimi=:username and salasana=:password AND kayttajataso<4");
         $query->execute(array('username'=>$username,'password'=>$password));
         $row = $query->fetch();
         if($row){

@@ -1,5 +1,13 @@
 <?php
-
+  $routes->post('/hallinto', function() {
+    HelloWorldController::etsi();
+  });
+   $routes->post('/poistakayttajia', function() {
+       UserController::removeUsers();
+  });
+  $routes->get('/hallinto', function() {
+    HelloWorldController::hallinto();
+  });
   $routes->get('/', function() {
     HelloWorldController::index();
   });
