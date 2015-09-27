@@ -21,11 +21,17 @@ class  UserController extends BaseController{
         }
         
     }
-    public static function removeUsers(){
+    public static function modifyUsers(){
         
    
         $params = $_POST;
-        User::removeUsers($params);
+        if(!empty($params['users'])){
+        User::removeUsers($params['users']);
+        }
+        if(!empty($params['users2'])){
+        User::modifyUsers($params['users2']);
+        }
+      
         $user = self::get_user_logged_in();
         $users = User::all();
          View::make('hallinto.html',array('users'=>$users,'user'=>$user));

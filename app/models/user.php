@@ -45,9 +45,9 @@ class User extends BaseModel{
          
          return null;
     }
-    public function removeUsers($params){
-        if(!empty($params)){
-        foreach($params['users'] as $user){
+    public function removeUsers($users){
+       
+        foreach($users as $user){
            
             $query= DB::connection()->prepare("UPDATE viesti SET kayttaja = 1 WHERE kayttaja=:id");    
         $query->execute(array('id'=>$user));    
@@ -55,10 +55,23 @@ class User extends BaseModel{
            
         $query->execute(array('id'=>$user));
        
-        }
+        
         }
         
     }
+    public function modifyUsers($users){
+        
+        foreach($users as $user){
+           
+            $query= DB::connection()->prepare("UPDATE kayttaja SET kayttajataso = kayttajataso+1 WHERE kayttajaid=:id");    
+        $query->execute(array('id'=>$user));    
+            
+       
+        }
+        
+        
+    }
+   
     public function username_like($username){
         $query = DB::connection()->prepare("SELECT * FROM kayttaja WHERE kayttajanimi LIKE ::text %:username%");
          $query->execute(array('username'=>$username));

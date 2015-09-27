@@ -2,8 +2,8 @@
   $routes->post('/hallinto', function() {
     HelloWorldController::etsi();
   });
-   $routes->post('/poistakayttajia', function() {
-       UserController::removeUsers();
+   $routes->post('/muokkaakayttajia', function() {
+       UserController::modifyUsers();
   });
   $routes->get('/hallinto', function() {
     HelloWorldController::hallinto();
