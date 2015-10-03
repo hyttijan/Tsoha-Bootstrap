@@ -19,6 +19,9 @@
 </div>
             {%endfor%}
          {% if user_logged_in %}
+            {%if error%}
+            <div class="alert alert-danger">{{error}}</div>
+            {%endif%}
         <form action="{{base_path}}/keskustelu-{{topic.id}}" method="post">
                <div class="form-group">
             <label for="content">Viestisi</label>   

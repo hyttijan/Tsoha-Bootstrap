@@ -7,10 +7,11 @@
   </div>
 
 <div class="jumbotron container-fluid">
-    {%if message%}
-<div class="alert alert-success">
-    <p>{{message}}</p>
-</div>
+ 
+    {%if error%}
+<div class="alert alert-danger">
+    <p>{{error}}</p>
+</div>  
 {%endif%}
     {%if user_logged_in%}
     <div>

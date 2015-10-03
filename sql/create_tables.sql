@@ -11,7 +11,7 @@ CREATE TABLE kategoria(
 CREATE TABLE keskustelu(
   keskusteluid SERIAL PRIMARY KEY,
   keskusteluotsikko varchar(50) NOT NULL,
-  kategoria smallint REFERENCES kategoria
+  kategoria smallint REFERENCES kategoria ON DELETE CASCADE
 );
 CREATE TABLE viesti(
   viestiid SERIAL PRIMARY KEY,

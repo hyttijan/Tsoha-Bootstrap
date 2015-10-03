@@ -5,6 +5,11 @@
     <h1>Uusi aihe</h1>
   </div>
 <div class="jumbotron container-fluid">
+    {%if error%}
+    <div class="alert alert-danger">
+        <p>Virhe:{{error}}</p>    
+    </div>
+    {%endif%}
 <form action="{{base_path}}/luokeskustelu" method="POST">
     <div class="form-group">
         <label for="category">Valitse aihealue</label>

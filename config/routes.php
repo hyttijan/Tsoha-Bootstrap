@@ -1,12 +1,18 @@
 <?php
-  $routes->post('/hallinto', function() {
-    HelloWorldController::etsi();
-  });
-   $routes->post('/muokkaakayttajia', function() {
+ 
+   $routes->post('/muokkaa', function() {
        UserController::modifyUsers();
+       CategoriesController::modifyCategories();
+       TopicController::removeTopics();
+       TopicController::removeMessages();
+       HelloWorldController::hallinto();
   });
+ 
   $routes->get('/hallinto', function() {
     HelloWorldController::hallinto();
+  });
+   $routes->post('/hallinto', function() {
+       TopicController::searchTopicsMessages();
   });
   $routes->get('/', function() {
     HelloWorldController::index();
@@ -50,7 +56,7 @@
       UserController::register();
   });
   $routes->get('/luokeskustelu',function(){
-     HelloWorldController::luokeskustelu(); 
+      HelloWorldController::luokeskustelu();
   });
    $routes->post('/luokeskustelu',function(){
        TopicController::createTopic();

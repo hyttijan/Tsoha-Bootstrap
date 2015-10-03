@@ -10,12 +10,19 @@
  
  <div>
     {%if user.level>1%}
-   
+        <form method="post" action="{{base_path}}/hallinto">
+            <h3>Keskustelut ja viestit</h3>
+            <div class="form-group">
+                <label for="searchword">Hakusana</label>
+                <input class="form-control" type="text" name="searchword">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Etsi">
+        </form>   
        
         
         {%if users>0%}
         
-        <form method="post" action="{{base_path}}/muokkaakayttajia">
+        <form method="post" action="{{base_path}}/muokkaa">
             <h3>Kayttajat</h3>
         {% for u in users %}
         <div class="form-group">{{u.name}}
@@ -29,12 +36,49 @@
         {%endif%}
         </div>
         {%endfor%}
-        <input class="btn btn-primary" type="submit" value="suorita">
-        </form>
-        {%else%}
-        <p>Hakukriteerejäsi vastaavia käyttäjiä ei löytynyt</p>
-        {%endif%}
+       
         
+        
+
+        {%if categories>1%}
+      
+            <h3>Kategoriat</h3>
+            {%for category in categories%}
+            <div class="form-group">{{category.name}}
+                <input class="checbox-inline" type="checkbox" name="categories[]" value="{{category.id}}">Poista kategoria</div>
+            {%endfor%}
+            {%else%}
+        <p>Kategorioita ei ole</p>
+        {%endif%}
+         {%endif%}
+         <div class="form-group">
+             <label for="newcategory">Uusi kategoria</label>
+             <input class="form-control" type="text" name="newcategory">
+         </div>
+
+        {%if searchword%}
+       
+        <h3>Hakusanasi tulokset:{{searchword}}</h3>
+        {%if topics>0%}
+        <h3>Keskustelut</h3>
+        {%for topic in topics%}
+        <div class="form-group">{{topic.title}}
+        <input class="checbox-inline" type="checkbox" name="topics[]" value="{{topic.id}}">Poista keskustelu
+        </div>
+        {%endfor%}
+        {%endif%}
+        {%if messages>0%}
+        <h3>Viestit</h3>
+        {%for message in messages%}
+        <div class="form-group">{{message.content}}
+        <input class="checbox-inline" type="checkbox" name="messages[]" value="{{message.id}}">Poista viesti
+        </div>
+        {%endfor%}
+        {%endif%}
+      
+        {%endif%}
+          <input class="btn btn-primary" type="submit" value="Suorita">
+        </form>
     {%else%}
     <div class="warning">
         <p>Käyttäjätasosi ei ole riittävä hallinnointiin</p>

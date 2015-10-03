@@ -14,7 +14,12 @@
         }
       }
     }
-
+    public function validate_string_length($string,$length){
+        if(strlen($string)<$length){
+            return $string." on liian lyhyt. Merkkijonon pituus on vähintään ".$length;
+        }
+    }
+     
     public function errors(){
       // Lisätään $errors muuttujaan kaikki virheilmoitukset taulukkona
       $errors = array();
