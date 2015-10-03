@@ -10,6 +10,7 @@ Yleisiä linkkejä:
 * Testausta varten on 
 käyttäjä: Testikayttaja ,
 salasana: salasana
+*Lisätty hakutoiminto hallinnointipaneeliin, tyhjien viestejen ja keskustelujen lisäys aiheuttaa nyt virheilmoituksen.
 *Lisätty hallinnointipaneeli, johon pääsee kirjauduttuaan testikäyttäjällä. Mahdollisuus poistaa peruskäyttäjiä tai muokata käyttöoikeuksia.
 * Tällä hetkellä toimii rekisteröinti, kirjautuminen ja uloskirjautuminen, uusien keskustelujen aloittaminen ja viestien lisääminen(kirjautuneena)
 
