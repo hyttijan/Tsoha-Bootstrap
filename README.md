@@ -7,7 +7,7 @@ Yleisiä linkkejä:
 * [Linkki phpdoc](https://github.com/hyttijan/Tsoha-Bootstrap/blob/master/doc/phpdoc)
 * [Linkki rekisteröintiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/rekisterointi)
 * [Linkki foorumiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/foorumi)
-* * [Linkki hallinnointiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/hallinto)
+* [Linkki hallinnointiin](http://hyttijan.users.cs.helsinki.fi/keskustelufoorumi/hallinto)
 * Testausta varten on 
 käyttäjä: Testikayttaja ,
 salasana: salasana
