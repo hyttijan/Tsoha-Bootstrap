@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class TopicController</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-BaseController.html">BaseController</a></li>
+				<li><a href="class-BaseModel.html">BaseModel</a></li>
+				<li><a href="class-CategoriesController.html">CategoriesController</a></li>
+				<li><a href="class-Category.html">Category</a></li>
+				<li><a href="class-DatabaseConfig.html">DatabaseConfig</a></li>
+				<li><a href="class-DB.html">DB</a></li>
+				<li><a href="class-HelloWorld.html">HelloWorld</a></li>
+				<li><a href="class-HelloWorldController.html">HelloWorldController</a></li>
+				<li><a href="class-Message.html">Message</a></li>
+				<li><a href="class-MySqlTableLister.html">MySqlTableLister</a></li>
+				<li><a href="class-PgSqlTableLister.html">PgSqlTableLister</a></li>
+				<li><a href="class-Redirect.html">Redirect</a></li>
+				<li><a href="class-TableLister.html">TableLister</a></li>
+				<li><a href="class-Topic.html">Topic</a></li>
+				<li class="active"><a href="class-TopicController.html">TopicController</a></li>
+				<li><a href="class-User.html">User</a></li>
+				<li><a href="class-UserController.html">UserController</a></li>
+				<li><a href="class-View.html">View</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-getDatabase.html">getDatabase</a></li>
+				<li><a href="function-getObjects.html">getObjects</a></li>
+				<li><a href="function-getValue.html">getValue</a></li>
+				<li><a href="function-prettyprint.html">prettyprint</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class TopicController</h1>
+
+
+	<div class="description">
+	<p>TopicController toimii Keskustelujen kontrollerina</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-BaseController.html"><span>BaseController</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>TopicController</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+			<b>Located at</b> <a href="source-class-TopicController.html#2-83" title="Go to source code">app/controllers/topic_controller.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="messages" id="_messages">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_messages">#</a>
+		<code><a href="source-class-TopicController.html#6-14" title="Go to source code">messages</a>( <span> <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>messages-funktio hakee messages mallista ja topic mallista keskustelun viestit,käyttäjät ja keskustelun nimen</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>messages-funktio hakee messages mallista ja topic mallista keskustelun viestit,käyttäjät ja keskustelun nimen</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addMessage" id="_addMessage">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addMessage">#</a>
+		<code><a href="source-class-TopicController.html#15-31" title="Go to source code">addMessage</a>( <span> <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>addMessage-funktio lähettää User mallille käskyn lisätä uusi viesti parametrina saatuun keskusteluun,jos viesti on tyhjä lähetetään virheilmoitus</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>addMessage-funktio lähettää User mallille käskyn lisätä uusi viesti parametrina saatuun keskusteluun,jos viesti on tyhjä lähetetään virheilmoitus</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeTopics" id="_removeTopics">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeTopics">#</a>
+		<code><a href="source-class-TopicController.html#32-41" title="Go to source code">removeTopics</a>( )</code>
+
+		<div class="description short">
+			<p>removeTopics-funktio lähettää Topic-mallille kutsun poistaa kaikki parametreinaan saamansa keskustelut</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>removeTopics-funktio lähettää Topic-mallille kutsun poistaa kaikki parametreinaan saamansa keskustelut</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeMessages" id="_removeMessages">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeMessages">#</a>
+		<code><a href="source-class-TopicController.html#42-53" title="Go to source code">removeMessages</a>( )</code>
+
+		<div class="description short">
+			<p>removeMessages-funktio lähettää Message-mallille kutsun poistaa kaikki parametreinaan saamansa viestit</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>removeMessages-funktio lähettää Message-mallille kutsun poistaa kaikki parametreinaan saamansa viestit</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createTopic" id="_createTopic">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createTopic">#</a>
+		<code><a href="source-class-TopicController.html#54-69" title="Go to source code">createTopic</a>( )</code>
+
+		<div class="description short">
+			<p>createTopics-funktio lähettää Topic-mallille kutsun luoda uusi keskustelu ja Message-mallille lisätä uusi viesti</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>createTopics-funktio lähettää Topic-mallille kutsun luoda uusi keskustelu ja Message-mallille lisätä uusi viesti</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="searchTopicsMessages" id="_searchTopicsMessages">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_searchTopicsMessages">#</a>
+		<code><a href="source-class-TopicController.html#70-82" title="Go to source code">searchTopicsMessages</a>( )</code>
+
+		<div class="description short">
+			<p>searchTopicsMessages-funktio hakee hakusanan perusteella topics-mallista ja messages-mallista löytyykö niistä hakusanaa vastaavia keskusteluja ja viestejä</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>searchTopicsMessages-funktio hakee hakusanan perusteella topics-mallista ja messages-mallista löytyykö niistä hakusanaa vastaavia keskusteluja ja viestejä</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-BaseController.html#methods">BaseController</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-BaseController.html#_check_logged_in">check_logged_in()</a>, 
+			<a href="class-BaseController.html#_get_user_logged_in">get_user_logged_in()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

@@ -1,8 +1,12 @@
 <?php
-/**UserController luokka kontrollerina User-luokalle*/
+/**
+ * UserController luokka kontrollerina User-luokalle
+ */
 class  UserController extends BaseController{
-    /**login-funktio ottaa yhteyden User malliin ja yrittää kirjautua saamillaan parametreilla,jos kirjautuminen
-    onnistuu tallennetaan käyttäjän id sessioon, jos ei käyttäjä palautetaan virhe-ilmotuksen kanssa etusivulle*/
+    /**
+     * login-funktio ottaa yhteyden User malliin ja yrittää kirjautua saamillaan parametreilla,jos kirjautuminen
+     * onnistuu tallennetaan käyttäjän id sessioon, jos ei käyttäjä palautetaan virhe-ilmotuksen kanssa etusivulle
+     */
     public static function login(){
         $params = $_POST;
         
@@ -23,8 +27,10 @@ class  UserController extends BaseController{
         }
         
     }
-    /**modifyUsers-funktio ottaa User malliin yhteyden, jos sillä on parametreja. Se suorittaa käyttäjien poiston ja oikeuksien muutoksen
-    parametrina saamilleen käyttäjille*/
+    /**
+     * modifyUsers-funktio ottaa User malliin yhteyden, jos sillä on parametreja. 
+     * Se suorittaa käyttäjien poiston ja oikeuksien muutoksen parametrina saamilleen käyttäjille
+     */
     public static function modifyUsers(){
         
    
@@ -40,7 +46,9 @@ class  UserController extends BaseController{
         $users = User::all();
         
     }
-    /**logout-funktio lopettaa käyttäjän session ja ohjaa tämän etusivulle*/
+    /**
+     * logout-funktio lopettaa käyttäjän session ja ohjaa tämän etusivulle
+     */
     public static function logout(){
         $_SESSION['user'] =null;
         Redirect::to('/',array('message'=>'Olet kirjautunut ulos'));

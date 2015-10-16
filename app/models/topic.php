@@ -1,5 +1,7 @@
 <?php
-/**Topic luokka sisältää erilaisia toimintoja, jotka liittyvät keskusteluihin*/
+/**
+ * Topic luokka sisältää erilaisia toimintoja, jotka liittyvät keskusteluihin
+ */
 class Topic extends BaseModel{
     public $id,$title;
     public function __construct($attributes) {
@@ -7,7 +9,9 @@ class Topic extends BaseModel{
     
         
     }
-    /**createTopic-funktio luo uuden aiheen saamiensa parametrien pohjalta*/
+    /**
+     * createTopic-funktio luo uuden aiheen saamiensa parametrien pohjalta
+     */
     public function createTopic($title,$category){
   
             
@@ -21,7 +25,9 @@ class Topic extends BaseModel{
          
     
     }
-    /**search-funktio etsii saamansa parametrin pohjalta parametria vastaavia aiheita*/
+    /**
+     * search-funktio etsii saamansa parametrin pohjalta parametria vastaavia aiheita
+     */
     public function search($searchword){
         $query = DB::connection()->prepare("SELECT * FROM keskustelu WHERE keskusteluotsikko LIKE :searchword");
         $query->execute(array('searchword'=>"%".$searchword."%"));
@@ -37,7 +43,9 @@ class Topic extends BaseModel{
         }
         return null;
     }
-    /**removeTopics-funktio poistaa parametrinaan saamansa keskustelut*/
+    /**
+     * removeTopics-funktio poistaa parametrinaan saamansa keskustelut
+     */
     public function removeTopics($ids){
         foreach($ids as $id){
        $query = DB::connection()->prepare('DELETE FROM keskustelu WHERE keskusteluid=:id');
@@ -45,7 +53,9 @@ class Topic extends BaseModel{
         }
        
     }
-    /**topics palauttaa kaikki keskustelut, jotka ovat kategoriassa, jonka id on parametrina*/
+    /**
+     * topics palauttaa kaikki keskustelut, jotka ovat kategoriassa, jonka id on parametrina
+     */
     public function topics($id){
           $query = DB::connection()->prepare('SELECT * FROM keskustelu WHERE kategoria=:id');
         $query->execute(array('id'=>$id));
@@ -56,7 +66,9 @@ class Topic extends BaseModel{
         }
         return $topics;
     }
-    /**find-funktio palauttaa parametrinaan saamansa id:n perusteella keskustelun*/
+    /**
+     * find-funktio palauttaa parametrinaan saamansa id:n perusteella keskustelun
+     */
        public function find($id){
         $query = DB::connection()->prepare('SELECT * FROM keskustelu WHERE keskusteluid=:id');
         $query->execute(array('id'=>$id));

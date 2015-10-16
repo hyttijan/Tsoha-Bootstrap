@@ -1,26 +1,34 @@
 <?php
-/**Message luokka sisältää erilaisia toimintoja, jotka liittyvät viesteihin*/
+/**
+ * Message luokka sisältää erilaisia toimintoja, jotka liittyvät viesteihin
+ */
 class Message extends BaseModel{
     public $user,$id,$content,$time;
             
     public function __construct($attributes) {
         parent::__construct($attributes);
     }
-    /**createMessage-funktio luo uuden viestin keskusteluun saamiensa paramatrien pohjalta*/
+    /**
+     * createMessage-funktio luo uuden viestin keskusteluun
+     */
     public function createMessage($topic,$message){
          $query=DB::connection()->prepare("INSERT INTO viesti(keskustelu,kayttaja,sisalto,aika) VALUES(:topic,:user,:message,now())");
          $query->execute(array('topic'=>$topic,'user'=>$_SESSION['user'],'message'=>$message));
          
          
     }
-    /**removeMessages-funktio poistaa viestit saamiensa id:eitten perusteella*/
+    /**
+     * removeMessages-funktio poistaa viestit saamiensa id:eitten perusteella
+     */
     public function removeMessages($ids){
         foreach($ids as $id){
             $query = DB::connection()->prepare("DELETE FROM viesti WHERE viestiid=:id");
             $query->execute(array('id'=>$id));
         }
     }
-    /**search-funktio etsii viesteja saamansa parametrin pohjalta*/
+    /**
+     * search-funktio etsii viesteja saamansa parametrin pohjalta
+     */
        public function search($searchword){
         $query = DB::connection()->prepare("SELECT * FROM viesti WHERE sisalto LIKE :searchword");
         $query->execute(array('searchword'=>"%".$searchword."%"));
@@ -36,7 +44,9 @@ class Message extends BaseModel{
         }
         return null;
     }
-    /**all-funktio palauttaa kaikki viestit, jotka ovat keskustelussa keskustelun id:n perusteella*/
+    /**
+     * all-funktio palauttaa kaikki viestit, jotka ovat keskustelussa keskustelun id:n perusteella
+     */
     public function all($id){
        $query=DB::connection()->prepare('SELECT kayttaja.kayttajanimi,viesti.viestiid,viesti.sisalto,viesti.aika FROM kayttaja,viesti WHERE viesti.kayttaja=kayttaja.kayttajaid AND viesti.keskustelu=:id');
         $query->execute(array('id'=>$id));
